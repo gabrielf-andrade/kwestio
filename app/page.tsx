@@ -1,3 +1,9 @@
+import { ThemeToggle } from "@/components/theme-toggle";
+
 export default function Home() {
-  return <div className="flex items-center justify-center h-screen bg-red-200">Hello World</div>;
+  return (
+    <div className="flex items-center justify-center h-screen ">
+      Hello World <ThemeToggle />
+    </div>
+  );
 }
