@@ -1,3 +1,7 @@
 import { createAuthClient } from "better-auth/react";
 
-export const { signIn, signUp, signOut, useSession } = createAuthClient();
+const authClient = createAuthClient();
+
+export const { signIn, signUp, signOut, useSession } = authClient;
+
+export type Session = typeof authClient.$Infer.Session;

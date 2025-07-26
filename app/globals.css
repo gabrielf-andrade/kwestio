@@ -10,9 +10,9 @@
   --card-foreground: oklch(0.2795 0.0368 260.031);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2795 0.0368 260.031);
-  --primary: oklch(0.623 0.214 259.815);
+  --primary: oklch(54.6% 0.245 262.881);
   --primary-foreground: oklch(0.97 0.014 254.604);
-  --secondary: oklch(0.882 0.059 254.128);
+  --secondary: oklch(80.9% 0.105 251.813);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.967 0.0029 264.5419);
   --muted-foreground: oklch(0.551 0.0234 264.3637);
@@ -59,10 +59,10 @@
   --card-foreground: oklch(0.97 0.014 254.604);
   --popover: oklch(0.257 0.0685 270.409);
   --popover-foreground: oklch(0.9288 0.0126 255.5078);
-  --primary: oklch(0.882 0.059 254.128);
-  --primary-foreground: oklch(0.282 0.091 267.935);
-  --secondary: oklch(0.424 0.199 265.638);
-  --secondary-foreground: oklch(0.97 0.014 254.604);
+  --secondary: oklch(80.9% 0.105 251.813);
+  --secondary-foreground: oklch(0.282 0.091 267.935);
+  --primary: oklch(54.6% 0.245 262.881);
+  --primary-foreground: oklch(0.97 0.014 254.604);
   --muted: oklch(0.2655 0.053 273.1448);
   --muted-foreground: oklch(0.7137 0.0192 261.3246);
   --accent: oklch(0.3478 0.0814 271.4798);
@@ -70,6 +70,7 @@
   --destructive: oklch(0.6368 0.2078 25.3313);
   --destructive-foreground: oklch(0.2077 0.0398 265.7549);
   --border: oklch(0.4461 0.0263 256.8018);
+  --border-60: oklch(0.4461 0.0263 256.8018 / 0.6);
   --input: oklch(0.4461 0.0263 256.8018);
   --ring: oklch(0.707 0.165 254.624);
   --chart-1: oklch(0.707 0.165 254.624);
@@ -117,6 +118,7 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
+  --color-border-60: var(--border-60);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-chart-1: var(--chart-1);
@@ -158,8 +160,15 @@
   }
   html {
     @apply h-full;
+    scrollbar-gutter: stable;
   }
   body {
     @apply bg-background text-foreground font-sans h-full;
+  }
+}
+
+@layer components {
+  .bg-shape {
+    @apply bg-[url(/shape.png)] saturate-125 brightness-90 contrast-110 hue-rotate-15;
   }
 }
