@@ -1,5 +1,6 @@
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL as string;
-export const routes = {
+
+export const ROUTES = {
   home: "/",
   signin: "/auth/signin",
   signup: "/auth/signup",
@@ -7,3 +8,8 @@ export const routes = {
   account: "dashboard/account",
   bookmarks: "dashboard/bookmarks",
 } as const;
+
+export const NAVBAR_LINKS = [
+  { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
+] as const;
