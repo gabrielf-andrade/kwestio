@@ -14,5 +14,5 @@ export default async function ProtectedLayout({ children }: PropsWithChildren) {
   if (!session) {
     redirect(ROUTES.signin);
   }
-  return <>{children}</>;
+  return <main className="h-[calc(100vh-65px)]">{children}</main>;
 }
