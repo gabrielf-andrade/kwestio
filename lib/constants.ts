@@ -10,6 +10,6 @@ export const ROUTES = {
 } as const;
 
 export const NAVBAR_LINKS = [
-  { label: "Pricing", href: "/pricing" },
-  { label: "About", href: "/about" },
+  { label: "Pricing", href: "#pricing" }, //"/pricing"
+  { label: "About", href: "#about" }, //"/about"
 ] as const;
