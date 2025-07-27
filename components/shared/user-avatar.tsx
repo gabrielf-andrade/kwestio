@@ -1,5 +1,7 @@
+"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PropsWithClassName } from "@/types/ui";
+import { AnimatePresence, motion } from "motion/react";
 
 interface UserAvatarProps extends PropsWithClassName {
   name: string;
@@ -26,7 +28,18 @@ export default function UserAvatar({ name, image, className }: UserAvatarProps) 
 
   return (
     <Avatar className={className}>
-      {isImage && <AvatarImage src={image!} alt={name} />}
+      <AnimatePresence>
+        {isImage && (
+          <motion.div
+            key="avatar-image"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <AvatarImage src={image!} alt={name} />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <AvatarFallback
         style={{ backgroundColor: isImage ? undefined : image || undefined }}
         className="text-white text-xs font-semibold"
