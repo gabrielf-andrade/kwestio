@@ -2,6 +2,8 @@
 
 import MobileButton from "@/components/navigation/mobile-button";
 import MobileNav from "@/components/navigation/mobile-nav";
+import LogoLink from "@/components/shared/logo-link";
+import UserMenuButtons from "@/components/shared/user-menu-buttons";
 import { Session } from "@/lib/auth-client";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
@@ -38,7 +40,15 @@ export default function MobileNavClient({ session }: MobileNavClientProps) {
 
   return (
     <>
-      <MobileButton isMenuOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
+      <div className="flex lg:hidden items-center gap-8">
+        <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }}>
+          <LogoLink size="md" />
+        </motion.div>
+      </div>
+      <div className="flex lg:hidden items-center gap-8">
+        {session && <UserMenuButtons session={session} />}
+        <MobileButton isMenuOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
+      </div>
 
       <MobileNav isMenuOpen={isMenuOpen} session={session} />
 

@@ -1,6 +1,6 @@
+import SignoutButton from "@/components/buttons/signout-button";
 import AuthButtons from "@/components/navigation/auth-buttons";
 import NavbarLinks from "@/components/navigation/navbar-links";
-import SignoutButton from "@/components/navigation/signout-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Session } from "@/lib/auth-client";
 import { cn } from "@/lib/utils";
@@ -21,7 +21,7 @@ export default function MobileNav({ isMenuOpen, session }: MobileNavProps) {
     <AnimatePresence mode="wait">
       {isMenuOpen && (
         <motion.div
-          className="lg:hidden overflow-hidden border-y absolute top-full left-0 w-full bg-background backdrop-blur-md"
+          className="z-50 lg:hidden overflow-hidden border-y absolute top-full left-0 w-full bg-background backdrop-blur-md"
           variants={menu}
           initial="hidden"
           whileInView="visible"
