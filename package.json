@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
   "dependencies": {
     "@hookform/resolvers": "^5.2.0",
     "@prisma/client": "^6.12.0",
@@ -30,10 +33,12 @@
     "react-spinners": "^0.17.0",
     "server-only": "^0.0.1",
     "tailwind-merge": "^3.3.1",
+    "ts-node": "^10.9.2",
     "zod": "^4.0.10"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@faker-js/faker": "^9.9.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
