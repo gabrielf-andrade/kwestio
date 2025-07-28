@@ -32,11 +32,14 @@ export default function MobileNav({ isMenuOpen, session }: MobileNavProps) {
           <NavbarLinks />
 
           <div
-            className={cn("p-4 border-t border-border flex items-center justify-between", !session && "justify-end")}
+            className={cn(
+              "p-4 border-t border-border flex items-center justify-between w-full",
+              !session && "justify-end"
+            )}
           >
             {session && <SignoutButton />}
-            <div className="flex items-center gap-2">
-              <span className="text-sm">Theme</span>
+            <div className="flex items-center gap-2 justify-center">
+              <span className="text-sm flex-1">Theme</span>
               <ThemeToggle />
             </div>
           </div>

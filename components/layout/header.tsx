@@ -10,7 +10,7 @@ export default async function Header() {
 
   return (
     <header className="z-50 w-full border-b border-border bg-background backdrop-blur-md relative">
-      <div className="lg:container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="px-4 w-full">
         <div className="flex h-16 items-center justify-between">
           <DesktopNav session={session} />
 

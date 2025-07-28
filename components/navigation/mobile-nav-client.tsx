@@ -57,7 +57,7 @@ export default function MobileNavClient({ session }: MobileNavClientProps) {
           <AnimatePresence>
             {isMenuOpen && (
               <motion.div
-                className="fixed inset-0 z-40 lg:hidden backdrop-blur-sm bg-black/80"
+                className="fixed inset-0 z-40 lg:hidden backdrop-blur-sm bg-black/50"
                 variants={overlay}
                 initial="hidden"
                 animate="visible"

@@ -18,7 +18,7 @@ export default function SignoutButton() {
     });
   }
   return (
-    <Button size="icon" variant="outline" className="size-8" onClick={signOutAction} aria-label="Sign out">
+    <Button size="icon" variant="destructive" className="size-8" onClick={signOutAction} aria-label="Sign out">
       <LogOut className="size-4" aria-hidden />
     </Button>
   );

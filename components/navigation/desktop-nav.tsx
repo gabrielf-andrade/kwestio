@@ -23,7 +23,7 @@ export default async function DesktopNav({ session }: DesktopNavProps) {
         </motion.div>
       </div>
 
-      <div className="hidden lg:flex items-center gap-8">
+      <div className="hidden lg:flex items-center gap-6">
         {!session && <AuthButtons session={session} />}
         {session && <UserMenuButtons session={session} />}
         <ThemeToggle />
